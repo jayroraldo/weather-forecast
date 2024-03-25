@@ -2,8 +2,10 @@
   <input
     #place
     class="form-control search-box"
+    name="inputValue"
     placeholder="Search..."
-    (keyup.enter)="onKeyPress(place.value)"
+    (keyup.enter)="onKeyPress(place.value, $event)"
+    onblur="this.value = ''"
   />
 
   <div class="back-btn">
