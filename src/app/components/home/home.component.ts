@@ -1,14 +1,14 @@
 import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { AuthService } from '@auth0/auth0-angular';
-import { DashboardComponent } from '../dashboard/dashboard.component';
-import { HeaderComponent } from './components/header/header.component';
-import { LoginComponent } from '../login/login.component';
-import { LoadingComponent } from '../../shared/component/loading/loading.component';
 import { Router, RouterOutlet } from '@angular/router';
-import { CatnavigationComponent } from './components/catnavigation/catnavigation.component';
-import { Category } from '../../types/category.type';
 import { categories } from '../../sampleData/categories.data';
+import { AuthenticationService } from '../../services/authentication.service';
+import { LoadingComponent } from '../../shared/component/loading/loading.component';
+import { Category } from '../../types/category.type';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { LoginComponent } from '../login/login.component';
+import { CatnavigationComponent } from './components/catnavigation/catnavigation.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +28,7 @@ import { categories } from '../../sampleData/categories.data';
 export class HomeComponent {
   categories: Category[] = categories;
 
-  constructor(private router: Router, public auth: AuthService) {}
+  constructor(private router: Router, public auth: AuthenticationService) {}
 
   onCategoryClicked(categoryId: number): void {
     categories.find((category: Category) => {

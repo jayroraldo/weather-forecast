@@ -8,10 +8,12 @@ import { EventEmitter } from 'stream';
 export class AuthenticationService {
   isLoading$: Observable<boolean>;
   isAuthenticated$: Observable<boolean>;
+  user$: Observable<any>;
 
   constructor(private router: Router, private auth: AuthService) {
     this.isLoading$ = this.auth.isLoading$;
     this.isAuthenticated$ = this.auth.isAuthenticated$;
+    this.user$ = this.auth.user$;
   }
 
   isUserAuthenticated(): void {

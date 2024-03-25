@@ -5,6 +5,7 @@ import { Weather } from '../../../types/weather.type';
 
 @Injectable()
 export class WeatherService {
+  // API_KEY can be found in Auth0 when logged in
   private API_KEY = '9bc374b00fcb3fb59d511d4eed61a3bb';
 
   constructor(private httpClient: HttpClient) {}

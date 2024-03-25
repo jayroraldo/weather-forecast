@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { AuthService } from '@auth0/auth0-angular';
+import { RouterModule } from '@angular/router';
+import { AuthenticationService } from '../../services/authentication.service';
 import { LoadingComponent } from '../../shared/component/loading/loading.component';
 import { CatnavigationComponent } from '../home/components/catnavigation/catnavigation.component';
 import { WeatherComponent } from '../weather/weather.component';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,5 +20,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
-  constructor(public auth: AuthService) {}
+  constructor(public auth: AuthenticationService) {}
 }
