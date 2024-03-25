@@ -3,11 +3,12 @@ import { Component, Inject } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCloud } from '@fortawesome/free-solid-svg-icons';
+import { LoadingComponent } from '../../shared/component/loading/loading.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [LoadingComponent, CommonModule, FontAwesomeModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

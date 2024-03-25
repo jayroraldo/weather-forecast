@@ -1,3 +1,8 @@
+@if(auth.isLoading$ | async) {
+<div class="container">
+  <app-loading></app-loading>
+</div>
+} @else {
 <div class="background">
   @if(auth.isAuthenticated$ | async) {
   <app-dashboard></app-dashboard>
@@ -7,3 +12,4 @@
 
   }
 </div>
+}

@@ -16,7 +16,7 @@
   @include media-breakpoint-down(sm) {
     &__show {
       color: white;
-      padding: 1.7em;
+      padding: 2em 1.7em 1.7em 1.7em;
       margin-left: 10%;
     }
 
@@ -49,12 +49,14 @@
   width: 20%;
   text-align: right;
   margin: 1.7em 0.2em 0 0;
+  cursor: pointer;
 
   h5 {
     display: inline-block;
     a {
       text-decoration: none;
       color: white;
+      @include underline-transistion(1.3);
     }
   }
 }

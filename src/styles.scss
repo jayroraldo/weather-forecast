@@ -1,3 +1,22 @@
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
+
+@mixin underline-transistion($width) {
+  &::after {
+    content: "";
+    display: block;
+    bottom: 0;
+    left: 0;
+    height: 0.2em;
+    background-color: rgb(99, 49, 49);
+    transform: scaleX(0);
+    transition-property: transform;
+    transition-duration: 0.2s;
+  }
+  &:hover {
+    &::after {
+      transform: scaleX($width);
+    }
+  }
+}

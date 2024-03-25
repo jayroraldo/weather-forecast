@@ -1,11 +1,12 @@
 import { AsyncPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
+import { LoadingComponent } from '../../shared/component/loading/loading.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [AsyncPipe, NgIf],
+  imports: [LoadingComponent, AsyncPipe, NgIf],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

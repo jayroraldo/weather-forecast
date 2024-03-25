@@ -3,11 +3,12 @@ import { WeatherComponent } from '../weather/weather.component';
 import { AuthService } from '@auth0/auth0-angular';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { LoadingComponent } from '../../shared/component/loading/loading.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, WeatherComponent],
+  imports: [CommonModule, WeatherComponent, LoadingComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
