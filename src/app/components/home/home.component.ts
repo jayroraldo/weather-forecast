@@ -5,6 +5,10 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 import { HeaderComponent } from '../header/header.component';
 import { LoginComponent } from '../login/login.component';
 import { LoadingComponent } from '../../shared/component/loading/loading.component';
+import { Router, RouterOutlet } from '@angular/router';
+import { CatnavigationComponent } from '../catnavigation/catnavigation.component';
+import { Category } from '../../types/category.type';
+import { categories } from '../../sampleData/categories.data';
 
 @Component({
   selector: 'app-home',
@@ -15,10 +19,22 @@ import { LoadingComponent } from '../../shared/component/loading/loading.compone
     LoginComponent,
     LoadingComponent,
     AsyncPipe,
+    RouterOutlet,
+    CatnavigationComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  constructor(public auth: AuthService) {}
+  categories: Category[] = categories;
+
+  constructor(private router: Router, public auth: AuthService) {}
+
+  onCategoryClicked(categoryId: number): void {
+    categories.find((category: Category) => {
+      if (category.id === categoryId) {
+        this.router.navigateByUrl('/' + category.category.toLowerCase());
+      }
+    });
+  }
 }

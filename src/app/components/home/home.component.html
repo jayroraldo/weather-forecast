@@ -4,10 +4,12 @@
 </div>
 } @else {
 <div class="background">
-  @if(auth.isAuthenticated$ | async) {
-  <app-dashboard></app-dashboard>
-  } @else {
-  <app-login></app-login>
+  <app-header> </app-header>
+  @if (auth.isAuthenticated$ | async) {
+  <app-catnavigation
+    (categoryClicked)="onCategoryClicked($event)"
+  ></app-catnavigation>
   }
+  <router-outlet></router-outlet>
 </div>
 }

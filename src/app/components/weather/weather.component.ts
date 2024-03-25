@@ -2,6 +2,7 @@ import { CommonModule, formatDate } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Weather } from '../../types/weather.type';
 import { WeatherService } from './services/weather.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-weather',
@@ -11,12 +12,11 @@ import { WeatherService } from './services/weather.service';
   styleUrl: './weather.component.scss',
 })
 export class WeatherComponent {
-  @Output() showWeather: EventEmitter<boolean> = new EventEmitter<boolean>();
   removeValue: boolean = false;
   weatherData: Weather | undefined;
   dateNow = formatDate(new Date(), 'MM/dd/yyyy', 'en_US');
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService, private router: Router) {}
 
   onKeyPress(place: string, event: any): void {
     event.target.blur();
@@ -27,6 +27,6 @@ export class WeatherComponent {
   }
 
   onBackClicked(): void {
-    this.showWeather.emit(false);
+    this.router.navigateByUrl('/home');
   }
 }

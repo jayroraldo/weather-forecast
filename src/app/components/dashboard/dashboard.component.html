@@ -1,4 +1,4 @@
-@if(!displayWeather){ @if(auth.user$ | async; as user) {
+@if(auth.user$ | async; as user) {
 <div class="container mt-5">
   <div
     class="brand text-dark"
@@ -26,13 +26,13 @@
       >
     </div>
     <div class="col-md">
-      <button class="btn btn-dark" (click)="onDisplayClicked(true)">
+      <button class="btn btn-dark" [routerLink]="['/weather']">
         Search Weather
       </button>
     </div>
   </div>
 </div>
 
-} } @else {
-<app-weather (showWeather)="onDisplayClicked($event)"></app-weather>
+} @else {
+<app-weather></app-weather>
 }
