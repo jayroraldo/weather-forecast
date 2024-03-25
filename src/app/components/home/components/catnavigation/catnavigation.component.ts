@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
-import { categories } from '../../sampleData/categories.data';
-import { Category } from '../../types/category.type';
+import { categories } from '../../../../sampleData/categories.data';
+import { Category } from '../../../../types/category.type';
 
 @Component({
   selector: 'app-catnavigation',

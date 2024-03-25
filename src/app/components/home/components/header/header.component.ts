@@ -3,7 +3,7 @@ import { Component, Inject } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCloud } from '@fortawesome/free-solid-svg-icons';
-import { LoadingComponent } from '../../shared/component/loading/loading.component';
+import { LoadingComponent } from '../../../../shared/component/loading/loading.component';
 
 @Component({
   selector: 'app-header',

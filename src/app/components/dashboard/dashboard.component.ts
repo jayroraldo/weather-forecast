@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { LoadingComponent } from '../../shared/component/loading/loading.component';
-import { CatnavigationComponent } from '../catnavigation/catnavigation.component';
+import { CatnavigationComponent } from '../home/components/catnavigation/catnavigation.component';
 import { WeatherComponent } from '../weather/weather.component';
 import { RouterModule } from '@angular/router';
 

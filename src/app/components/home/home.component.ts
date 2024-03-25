@@ -2,11 +2,11 @@ import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { DashboardComponent } from '../dashboard/dashboard.component';
-import { HeaderComponent } from '../header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from '../login/login.component';
 import { LoadingComponent } from '../../shared/component/loading/loading.component';
 import { Router, RouterOutlet } from '@angular/router';
-import { CatnavigationComponent } from '../catnavigation/catnavigation.component';
+import { CatnavigationComponent } from './components/catnavigation/catnavigation.component';
 import { Category } from '../../types/category.type';
 import { categories } from '../../sampleData/categories.data';
 
