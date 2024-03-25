@@ -1,9 +1,9 @@
-@if(auth.isLoading$ | async) {
+@if(authService.isLoading$ | async) {
 <div class="container">
   <app-loading></app-loading>
 </div>
-} @else if(!(auth.isLoading$ | async) && (auth.isAuthenticated$ | async) ===
-false) {
+} @else if(!(authService.isLoading$ | async) && (authService.isAuthenticated$ |
+async) === false) {
 <div class="container">
   <div class="content">
     <div class="fs-3 fw-bold">
@@ -16,7 +16,9 @@ false) {
       </p>
     </div>
 
-    <button class="btn bg-dark" (click)="onLoginRedirect()">Login</button>
+    <button class="btn bg-dark" (click)="authService.onLoginRedirect()">
+      Login
+    </button>
   </div>
 </div>
 
