@@ -1,0 +1,33 @@
+<div class="">
+  <input
+    #place
+    class="form-control search-box"
+    placeholder="Search..."
+    (keyup.enter)="onKeyPress(place.value)"
+  />
+</div>
+
+@if(weatherData) {
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Temp(F)</th>
+      <th scope="col">Description</th>
+      <th scope="col">Main</th>
+      <th scope="col">Pressure</th>
+      <th scope="col">Humidity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ dateNow }}</td>
+      <td>{{ weatherData.temp }}</td>
+      <td>{{ weatherData.description }}</td>
+      <td>{{ weatherData.main }}</td>
+      <td>{{ weatherData.pressure }}</td>
+      <td>{{ weatherData.humidity }}</td>
+    </tr>
+  </tbody>
+</table>
+}

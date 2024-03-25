@@ -1,3 +1,4 @@
+@if ((auth.isAuthenticated$ | async) === false) {
 <div class="container">
   <div class="content">
     <p>
@@ -8,3 +9,6 @@
     <button class="btn bg-dark" (click)="onLoginRedirect()">Login</button>
   </div>
 </div>
+} @else {
+<app-dashboard></app-dashboard>
+}
