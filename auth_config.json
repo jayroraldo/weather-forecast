@@ -1,0 +1,10 @@
+{
+  "domain": "dev-cqf1cti23zxxl47j.us.auth0.com",
+  "clientId": "QBcZcxQ4dFJgRHzE0Oa7ciho8sEnSJCo",
+  "authorizationParams": {
+    "audience": "https://dev-cqf1cti23zxxl47j.us.auth0.com/api/v2/"
+  },
+  "apiUri": "http://localhost:3001",
+  "appUri": "http://localhost:4200",
+  "errorPath": "/error"
+}
