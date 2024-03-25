@@ -1,1 +1,39 @@
-<p>dashboard works!</p>
+@if(!displayWeather){ @if(auth.user$ | async; as user) {
+<div class="container mt-5">
+  <div
+    class="brand text-dark"
+    [ngClass]="{ brand__hide: (auth.isAuthenticated$ | async) === true }"
+  >
+    <h1>Weather Forecast</h1>
+  </div>
+  <div
+    class="row align-items-center profile-header mb-5 text-center text-md-left"
+  >
+    <div class="col-md-2">
+      <img
+        [src]="user.picture"
+        class="rounded-circle img-fluid profile-picture mb-3 mb-md-0 logo"
+      
+      />
+    </div>
+    <div class="col-md my-3 detail">
+      <h2>{{ user.name }}</h2>
+      <h2 class="lead text-muted fw-semibold">{{ user.nickname }}</h2>
+      <a
+        class="fw-semibold link-offset-3"
+        href="{{ 'https://github.com/' + user.nickname }}"
+        target="_blank"
+        >https://github.com/{{ user.nickname }}</a
+      >
+    </div>
+    <div class='col-md'>
+      <button class="btn btn-dark" (click)="onDisplayClicked(true)">
+        Display Weather
+      </button>
+    </div>
+  </div>
+</div>
+
+} } @else {
+<app-weather (showWeather)="onDisplayClicked($event)"></app-weather>
+}

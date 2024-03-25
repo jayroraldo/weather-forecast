@@ -1,9 +1,21 @@
 <div class="header bg-dark">
   <div class="row">
-    <div class="logo my-1">
+    <div
+      class="logo my-1"
+      [ngClass]="{
+        logo__width: (authService.isAuthenticated$ | async) === true
+      }"
+    >
       <fa-icon class="fa-3x" [icon]="faCloud"></fa-icon>
     </div>
-    <div class="brand my-1">
+    <div
+      class="brand my-1"
+      [ngClass]="
+        (authService.isAuthenticated$ | async) === true
+          ? 'brand__hide'
+          : 'brand__show'
+      "
+    >
       <h1>Weather Forecast</h1>
     </div>
     @if((authService.isAuthenticated$ | async) === true) {

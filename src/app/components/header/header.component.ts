@@ -7,7 +7,7 @@ import { faCloud } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [AsyncPipe, NgIf, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

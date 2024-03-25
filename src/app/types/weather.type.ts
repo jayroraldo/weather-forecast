@@ -4,4 +4,5 @@ export interface Weather {
   main: string;
   pressure: string;
   humidity: string;
+  name: string;
 }

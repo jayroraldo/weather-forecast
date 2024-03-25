@@ -4,11 +4,11 @@
   height: 100vh;
   justify-content: center;
   overflow: hidden;
-  position: fixed;
 }
 
 .content {
-  align-self: center;
+  margin-top: 10em;
+  font-weight: 300;
 
   button {
     color: white;

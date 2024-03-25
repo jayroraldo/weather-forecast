@@ -1,0 +1,64 @@
+@import "../../../styles.scss";
+
+.input-container {
+  display: flex;
+  margin-top: 10em;
+}
+
+input {
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #2281e0;
+  background-color: #6eaed3;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  padding-right: 2em;
+  margin-left: 2em;
+  :focus {
+    color: #212529;
+    background-color: #6eaed3;
+    border-color: #010102;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(3, 13, 65, 0.527);
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: 20%;
+  }
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1em;
+  margin-right: 2em;
+}
+
+#col1 {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: revert;
+  }
+}
+.table-container {
+  margin: 2em 1em 0 1em;
+
+  @include media-breakpoint-up(sm) {
+    margin: 6em 5em 0 5em;
+  }
+}
+.place {
+  margin: 2em 1em 0 1em;
+
+  @include media-breakpoint-up(sm) {
+    margin: 2em 0 2em 6em;
+  }
+}

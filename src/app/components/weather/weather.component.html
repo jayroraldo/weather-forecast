@@ -1,33 +1,42 @@
-<div class="">
+<div class="input-container">
   <input
     #place
     class="form-control search-box"
     placeholder="Search..."
     (keyup.enter)="onKeyPress(place.value)"
   />
+
+  <div class="back-btn">
+    <button class="btn btn-dark" (click)="onBackClicked()">Back</button>
+  </div>
 </div>
 
 @if(weatherData) {
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Temp(F)</th>
-      <th scope="col">Description</th>
-      <th scope="col">Main</th>
-      <th scope="col">Pressure</th>
-      <th scope="col">Humidity</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{ dateNow }}</td>
-      <td>{{ weatherData.temp }}</td>
-      <td>{{ weatherData.description }}</td>
-      <td>{{ weatherData.main }}</td>
-      <td>{{ weatherData.pressure }}</td>
-      <td>{{ weatherData.humidity }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="place">
+  <h1>{{ weatherData.name }}</h1>
+</div>
+<div class="table-container">
+  <table class="table col-md">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Temp(F)</th>
+        <th id="col1" scope="col">Description</th>
+        <th id="col1" scope="col">Main</th>
+        <th id="col1" scope="col">Pressure</th>
+        <th id="col1" scope="col">Humidity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ dateNow }}</td>
+        <td>{{ weatherData.temp }}</td>
+        <td id="col1">{{ weatherData.description }}</td>
+        <td id="col1">{{ weatherData.main }}</td>
+        <td id="col1">{{ weatherData.pressure }}</td>
+        <td id="col1">{{ weatherData.humidity }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 }
